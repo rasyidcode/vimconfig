@@ -113,24 +113,24 @@ nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " Show all diagnostic
-nnoremap <silent><nowait> <space>a :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent><nowait> <space>e :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent><nowait> <space>c :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent><nowait> <space>o :<C-u>CocList outline<cr>
-" Search workspace symbol
-nnoremap <silent><nowait> <space>s :<C-u>CocList -I symbols<cr>
-" Do default action for next item
-nnoremap <silent><nowait> <space>j :<C-u>CocNext<cr>
-" Do default action for prev item
-nnoremap <silent><nowait> <space>k :<C-u>CocPrev<cr>
-" Resume latest coc list
-nnoremap <silent><nowait> <space>p :<C-u>CocListResume<cr>
-
-" Formatting
-nnoremap <silent><C-S-I> :CocCommand prettier.formatFile<CR>
+" nnoremap <silent><nowait> <space>a :<C-u>CocList diagnostics<cr>
+" " Manage extensions
+" nnoremap <silent><nowait> <space>e :<C-u>CocList extensions<cr>
+" " Show commands
+" nnoremap <silent><nowait> <space>c :<C-u>CocList commands<cr>
+" " Find symbol of current document
+" nnoremap <silent><nowait> <space>o :<C-u>CocList outline<cr>
+" " Search workspace symbol
+" nnoremap <silent><nowait> <space>s :<C-u>CocList -I symbols<cr>
+" " Do default action for next item
+" nnoremap <silent><nowait> <space>j :<C-u>CocNext<cr>
+" " Do default action for prev item
+" nnoremap <silent><nowait> <space>k :<C-u>CocPrev<cr>
+" " Resume latest coc list
+" nnoremap <silent><nowait> <space>p :<C-u>CocListResume<cr>
+" 
+" " Formatting
+" nnoremap <silent><C-S-I> :CocCommand prettier.formatFile<CR>
 
 " Explorer
 " nnoremap <space>e :CocCommand explorer<CR>
@@ -142,7 +142,8 @@ nnoremap <silent><C-S-I> :CocCommand prettier.formatFile<CR>
 
 " Autosave
 " autocmd TextChanged,TextChangedI <buffer> silent write
-autocmd InsertLeave * if &readonly==0 && filereadable(bufname('%')) | silent update | endif
+" autocmd InsertLeave * if &readonly==0 && filereadable(bufname('%')) | silent update | endif
+" 
 
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
@@ -159,4 +160,6 @@ let g:bufferline_echo = 0
 " vim-airline/vim-airline config
 let g:airline#extensions#tabline#enabled = 1
 
-
+" Netrw stuff
+nnoremap <space>e :Rexplore<CR>
+nnoremap <space>v :Vexplore<CR>
